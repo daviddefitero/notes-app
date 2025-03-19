@@ -91,7 +91,7 @@ app.delete('/api/notes/:id', (request, response) => {
   response.status(204).end()
 })
 
-
+app.use(unknownEndpoint)
 
 // Listening
 app.listen(PORT, () => {
