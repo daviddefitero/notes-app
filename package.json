@@ -1,20 +1,34 @@
 {
-  "name": "notes",
+  "name": "notes-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full-stack note-taking application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"vercel dev\" \"npm run dev:frontend\"",
+    "build": "cd frontend && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "deploy": "npm run build && git add . && git commit -m \"Build for deployment\" && git push origin main"
   },
+  "keywords": [
+    "notes",
+    "react",
+    "node",
+    "express",
+    "mongodb"
+  ],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.2"
-  },
+  "license": "",
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/notes-app.git"
   }
 }
