@@ -16,6 +16,7 @@ const unknownEndpoint = (request, response, next) => {
 }
 
 app.use(express.json())
+app.use(express.static('dist'))
 app.use(requestLogger)
 app.use(cors())
 
@@ -90,7 +91,6 @@ app.delete('/api/notes/:id', (request, response) => {
   response.status(204).end()
 })
 
-app.use(express.static('dist'))
 app.use(unknownEndpoint)
 
 // Listening
