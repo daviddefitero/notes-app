@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), vercel()],
   server: {
     proxy: {
-      '/api': {
+      'api': {
         target: 'http://localhost:3000',
         changeOrigin: true
       }
