@@ -1,4 +1,4 @@
-const API_ENDPOINT = import.meta.env.VITE_API_URL
+const API_ENDPOINT = '/api/notes'
 
 export async function getAll () {
     const response = await fetch(API_ENDPOINT)

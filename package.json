@@ -4,9 +4,9 @@
   "description": "Full-stack note-taking application",
   "main": "index.js",
   "scripts": {
-    "dev:backend": "cd backend && npm run dev",
+    "dev:backend": "vercel dev",
     "dev:frontend": "cd frontend && npm run dev",
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:frontend\"",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "build": "cd frontend && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
@@ -21,9 +21,6 @@
   ],
   "author": "",
   "license": "",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
   "engines": {
     "node": ">=18.0.0"
   },
